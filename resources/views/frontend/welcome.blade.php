@@ -40,7 +40,7 @@
 
 	<!-- Eshop StyleSheet -->
 	<link rel="stylesheet" href="{{asset('css/reset.css')}}">
-	<link rel="stylesheet" href="{{asset('style.css')}}">
+	<link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 
 
