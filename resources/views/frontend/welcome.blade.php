@@ -18,7 +18,8 @@
 	<!-- StyleSheet -->
 
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	{{-- <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}"> --}}
 	<!-- Magnific Popup -->
     <link rel="stylesheet" href="{{asset('css/magnific-popup.min.css')}}">
 	<!-- Font Awesome -->
@@ -83,7 +84,7 @@
 								<li><i class="ti-location-pin"></i> Store location</li>
 								<li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
 								<li><i class="ti-user"></i> <a href="#">My account</a></li>
-								<li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
+								<li><i class="ti-power-off"></i><a href="{{route('login')}}">Login</a></li>
 							</ul>
 						</div>
 						<!-- End Top Right -->
