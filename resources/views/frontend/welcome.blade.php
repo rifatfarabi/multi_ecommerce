@@ -11,7 +11,7 @@
 	<!-- Title Tag  -->
     <title>Eshop - eCommerce HTML5 Template.</title>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
 	<!-- Web Font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
@@ -21,28 +21,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 	{{-- <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}"> --}}
 	<!-- Magnific Popup -->
-    <link rel="stylesheet" href="{{asset('css/magnific-popup.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.min.css') }}">
 	<!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
 	<!-- Fancybox -->
-	<link rel="stylesheet" href="{{asset('css/jquery.fancybox.min.css')}}">
+	<link rel="stylesheet" href="{{ asset('css/jquery.fancybox.min.css') }}">
 	<!-- Themify Icons -->
-    <link rel="stylesheet" href="{{asset('css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
 	<!-- Nice Select CSS -->
-    <link rel="stylesheet" href="{{asset('css/niceselect.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/niceselect.css') }}">
 	<!-- Animate CSS -->
-    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
 	<!-- Flex Slider CSS -->
-    <link rel="stylesheet" href="{{asset('css/flex-slider.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/flex-slider.min.css') }}">
 	<!-- Owl Carousel -->
-    <link rel="stylesheet" href="{{asset('css/owl-carousel.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/owl-carousel.css') }}">
 	<!-- Slicknav -->
-    <link rel="stylesheet" href="{{asset('css/slicknav.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}">
 
-	<!-- Eshop StyleSheet -->
-	<link rel="stylesheet" href="{{asset('css/reset.css')}}">
-	<link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+	<!--StyleSheet -->
+	<link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
 
 
@@ -84,7 +84,7 @@
 								<li><i class="ti-location-pin"></i> Store location</li>
 								<li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
 								<li><i class="ti-user"></i> <a href="#">My account</a></li>
-								<li><i class="ti-power-off"></i><a href="{{route('login')}}">Login</a></li>
+								<li><i class="ti-power-off"></i><a href="{{ route('login') }}">Login</a></li>
 							</ul>
 						</div>
 						<!-- End Top Right -->
@@ -2331,36 +2331,36 @@
 	<!-- /End Footer Area -->
 
 	<!-- Jquery -->
-    <script src="{{asset('js/jquery.min.js')}}"></script>
-    <script src="{{asset('js/jquery-migrate-3.0.0.js')}}"></script>
-	<script src="{{asset('js/jquery-ui.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-migrate-3.0.0.js') }}"></script>
+	<script src="{{ asset('js/jquery-ui.min.js') }}"></script>
 	<!-- Popper JS -->
-	<script src="{{asset('js/popper.min.js')}}"></script>
+	<script src="{{ asset('js/popper.min.js') }}"></script>
 	<!-- Bootstrap JS -->
-	<script src="{{asset('js/bootstrap.min.js')}}"></script>
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 	<!-- Color JS -->
-	<script src="{{asset('js/colors.js')}}"></script>
+	<script src="{{ asset('js/colors.js') }}"></script>
 	<!-- Slicknav JS -->
-	<script src="{{asset('js/slicknav.min.js')}}"></script>
+	<script src="{{ asset('js/slicknav.min.js') }}"></script>
 	<!-- Owl Carousel JS -->
-	<script src="{{asset('js/owl-carousel.js')}}"></script>
+	<script src="{{ asset('js/owl-carousel.js') }}"></script>
 	<!-- Magnific Popup JS -->
-	<script src="{{asset('js/magnific-popup.js')}}"></script>
+	<script src="{{ asset('js/magnific-popup.js') }}"></script>
 	<!-- Waypoints JS -->
-	<script src="{{asset('js/waypoints.min.js')}}"></script>
+	<script src="{{ asset('js/waypoints.min.js') }}"></script>
 	<!-- Countdown JS -->
-	<script src="{{asset('js/finalcountdown.min.js')}}"></script>
+	<script src="{{ asset('js/finalcountdown.min.js') }}"></script>
 	<!-- Nice Select JS -->
-	<script src="{{asset('js/nicesellect.js')}}"></script>
+	<script src="{{ asset('js/nicesellect.js') }}"></script>
 	<!-- Flex Slider JS -->
-	<script src="{{asset('js/flex-slider.js')}}"></script>
+	<script src="{{ asset('js/flex-slider.js') }}"></script>
 	<!-- ScrollUp JS -->
-	<script src="{{asset('js/scrollup.js')}}"></script>
+	<script src="{{ asset('js/scrollup.js') }}"></script>
 	<!-- Onepage Nav JS -->
-	<script src="{{asset('js/onepage-nav.min.js')}}"></script>
+	<script src="{{ asset('js/onepage-nav.min.js') }}"></script>
 	<!-- Easing JS -->
-	<script src="{{asset('js/easing.js')}}"></script>
+	<script src="{{ asset('js/easing.js') }}"></script>
 	<!-- Active JS -->
-	<script src="{{asset('js/active.js')}}"></script>
+	<script src="{{ asset('js/active.js') }}"></script>
 </body>
 </html>
