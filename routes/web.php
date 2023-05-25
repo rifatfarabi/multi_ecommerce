@@ -24,5 +24,5 @@ Route::get('/', [MainController::class, 'index']);
 
 Auth::routes();
 
-Route::get('/dashboard', [AdminController::class, 'dashboard']);
+Route::get('/admin/login', [AdminController::class, 'adminLogin']);
 

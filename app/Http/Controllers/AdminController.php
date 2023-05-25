@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function dashboard(){
+    public function adminLogin(){
         return view('partials.admin_menu');
     }
 }
