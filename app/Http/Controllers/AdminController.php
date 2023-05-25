@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function adminLogin(){
-        return view('partials.admin_menu');
+        return view('auth.admin_login');
     }
 }

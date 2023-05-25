@@ -20,9 +20,9 @@ use Symfony\Component\Routing\Route as SymfonyRoute;
 //     return view('welcome');
 // });
 
-Route::get('/', [MainController::class, 'index']);
+Route::get('/', [MainController::class, 'index'])->name('welcome');
 
 Auth::routes();
 
-Route::get('/admin/login', [AdminController::class, 'adminLogin']);
+Route::get('/admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
 

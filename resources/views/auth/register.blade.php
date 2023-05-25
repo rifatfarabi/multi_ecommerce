@@ -24,6 +24,34 @@
                                 @enderror
                             </div>
                         </div>
+                        {{-- <div class="row mb-3">
+                            <label for="last_name" class="col-md-4 col-form-label text-md-end">{{ __('Last Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus>
+
+                                @error('last_name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="country" class="col-md-4 col-form-label text-md-end">{{ __('Country') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" name="l_name" value="{{ old('country') }}" required autocomplete="country" autofocus>
+
+                                @error('country')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div> --}}
+
+
 
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
@@ -60,6 +88,19 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        {{-- <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Gender') }}</label>
+
+                            <div class="col-md-6">
+
+                                <select class="form-control" name="gender">
+                                    <option value="0">Male</option>
+                                    <option value="1">Female</option>
+                                </select>
+
+                            </div>
+                        </div> --}}
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
