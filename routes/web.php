@@ -24,5 +24,8 @@ Route::get('/', [MainController::class, 'index'])->name('welcome');
 
 Auth::routes();
 
-Route::get('/admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
+// Route::resource('/admin/login', [AdminController::class, 'adminLogin']);
+
+Route::get('/admin/login', [AdminController::class, 'adminLogin']);
+Route::post('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dasboa');
 
