@@ -9,4 +9,8 @@ class MainController extends Controller
     public function index(){
         return view('frontend.welcome');
     }
+
+    public function customerDashboard(){
+        return view('dashboard.customer');
+    }
 }

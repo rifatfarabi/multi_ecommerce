@@ -22,10 +22,20 @@ use Symfony\Component\Routing\Route as SymfonyRoute;
 
 Route::get('/', [MainController::class, 'index'])->name('welcome');
 
+Route::middleware(['auth', 'user-access::user'])->group(function(){
+
+    Route::get('/', [MainController::class, 'customerDashboard'])->name('dashboard.customer');
+});
+
+
 Auth::routes();
 
 // Route::resource('/admin/login', [AdminController::class, 'adminLogin']);
 
 Route::get('/admin/login', [AdminController::class, 'adminLogin']);
-Route::post('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dasboa');
+Route::middleware(['auth', 'user-access::user'])->group(function(){
+
+    Route::post('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dasboard.admin');
+});
+
 

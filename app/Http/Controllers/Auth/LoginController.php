@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Symfony\Component\HttpFoundation\Request;
 
 class LoginController extends Controller
 {
@@ -37,4 +38,28 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function login(Request $request){
+
+        $input = $request->all();
+
+        $this->validate($request,[
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if(auth()->attempt(array(['email'=>$input['email'], 'password' => $input['password']])))
+        {
+            if(auth()->user()->role == 'admin'){
+                return redirect()->route('dasboard.admin');
+            }elseif(auth()->user()->role == 'customer'){
+                return redirect()->route('dashboard.customer');
+            }else{
+                return redirect()->route('welcome');
+            }
+        }else{
+            return redirect()->route('login')->with('error', 'Email Address & Password Are Wrong');
+        }
+    }
+
 }
