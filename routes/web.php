@@ -21,24 +21,15 @@ use Symfony\Component\Routing\Route as SymfonyRoute;
 // });
 
 Route::get('/', [MainController::class, 'index'])->name('welcome');
-Route::get('/', [MainController::class, 'customerDashboard'])->name('dashboard.customer');
+Route::post('customer/dashboard', [MainController::class, 'customerDashboard'])->name('dashboard.customer');
 
-// Route::middleware(['auth', 'user-access::user'])->group(function(){
-
-//     Route::get('/', [MainController::class, 'customerDashboard'])->name('dashboard.customer');
-// });
 
 
 Auth::routes();
 
 // Route::resource('/admin/login', [AdminController::class, 'adminLogin']);
 
-Route::get('/admin/login', [AdminController::class, 'adminLogin']);
-Route::post('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dasboard.admin');
-
-// Route::middleware(['auth', 'user-access::user'])->group(function(){
-
-//     Route::post('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dasboard.admin');
-// });
+Route::get('admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
+Route::post('admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard.admin');
 
 
