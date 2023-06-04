@@ -21,7 +21,7 @@ use Symfony\Component\Routing\Route as SymfonyRoute;
 // });
 
 Route::get('/', [MainController::class, 'index'])->name('welcome');
-Route::post('customer/dashboard', [MainController::class, 'customerDashboard'])->name('dashboard.customer');
+Route::get('customer/dashboard', [MainController::class, 'customerDashboard'])->name('dashboard.customer');
 
 
 
