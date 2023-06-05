@@ -20,8 +20,8 @@ use Symfony\Component\Routing\Route as SymfonyRoute;
 //     return view('welcome');
 // });
 
-Route::get('/', [MainController::class, 'index'])->name('welcome');
-Route::get('customer/dashboard', [MainController::class, 'customerDashboard'])->name('dashboard.customer');
+Route::get('/', [MainController::class, 'index'])->name('welcome')->middleware('admin');
+Route::get('customer/dashboard', [MainController::class, 'customerDashboard'])->name('dashboard.customer')->middleware('admin');
 
 
 
