@@ -20,8 +20,8 @@ use Symfony\Component\Routing\Route as SymfonyRoute;
 //     return view('welcome');
 // });
 
-Route::get('/', [MainController::class, 'index'])->name('welcome')->middleware('admin');
-Route::get('customer/dashboard', [MainController::class, 'customerDashboard'])->name('dashboard.customer')->middleware('admin');
+Route::get('/', [MainController::class, 'index'])->name('welcome');
+Route::get('customer/dashboard', [MainController::class, 'customerDashboard'])->name('dashboard.customer');
 
 
 
@@ -30,6 +30,6 @@ Auth::routes();
 // Route::resource('/admin/login', [AdminController::class, 'adminLogin']);
 
 Route::get('admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
-Route::post('admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard.admin');
+Route::get('admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard.admin');
 
 
