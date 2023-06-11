@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Route as SymfonyRoute;
@@ -31,5 +32,6 @@ Auth::routes();
 
 Route::get('admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
 Route::get('admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard.admin');
+Route::get('category', [CategoryController::class, 'index'])->name('category.index');
 
 

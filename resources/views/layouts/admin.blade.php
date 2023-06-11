@@ -56,7 +56,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="layout-static.html">Add New Product</a>
                                     <a class="nav-link" href="layout-sidenav-light.html">All Product</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Category</a>
+                                    <a class="nav-link" href="{{ route('category.index') }}">Category</a>
                                     <a class="nav-link" href="layout-sidenav-light.html">Brand</a>
                                 </nav>
                             </div>
