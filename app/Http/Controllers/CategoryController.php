@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCategoryRequest;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,13 +15,13 @@ class CategoryController extends Controller
 
     public function create()
     {
-        //
+        return view('category.create');
     }
 
 
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
-        //
+        
     }
 
     public function show(string $id)
