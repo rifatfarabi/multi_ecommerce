@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCategoryRequest;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class CategoryController extends Controller
 {
@@ -21,7 +23,17 @@ class CategoryController extends Controller
 
     public function store(StoreCategoryRequest $request)
     {
-        
+        $category = Category::create([
+
+            "name"=> $request->name,
+            "banner"=> $request->banner,
+            "icon"=> $request->icon,
+            "meta_title"=> $request->meta_title,
+            "meta_description"=> $request->meta_description
+        ]);
+
+        Session::flash('success', "Category Created Successfully");
+        return redirect()->route('category.index');
     }
 
     public function show(string $id)

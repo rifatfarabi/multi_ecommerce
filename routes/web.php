@@ -31,7 +31,7 @@ Auth::routes();
 // Route::resource('/admin/login', [AdminController::class, 'adminLogin']);
 
 Route::get('admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
-Route::get('admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard.admin');
+Route::post('admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard.admin');
 Route::resource('category', CategoryController::class);
 
 
