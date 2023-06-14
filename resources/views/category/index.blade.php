@@ -4,12 +4,48 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 mt-2">
         <div class="card">
             <div class="card-header">
-                <h3>Category
+                <h5 class="mb-0 h6">All Category
                     <a href="{{ route('category.create') }}" class="btn btn-primary float-end">Add New Category</a>
                 </h3>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Banner</th>
+                        <th scope="col">Icon</th>
+                        <th scope="col">Meta Title</th>
+                        <th scope="col">Meta Description</th>
+                        <th scope="col">Option</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($categories as $key => $category)
+                        <tr>
+                            <th scope="row">{{ $key+1 }}</th>
+                            <td>{{ $category->name}}</td>
+                            <td>{{ $category->banner}}</td>
+                            <td>{{ $category->icon}}</td>
+                            <td>{{ $category->meta_title}}</td>
+                            <td>{{ $category->meta_description}}</td>
+                            <td>
+                                <a class="btn btn-primary btn-icon btn-circle btn-sm" href="{{ route('category.edit', $category->id)}}" title="{{ ('Edit') }}">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a class="btn btn-danger btn-icon btn-circle btn-sm" href="{{ route('category.destroy', $category->id)}}" title="{{ ('Delete') }}">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                          </tr>
+                        @endforeach
+                    </tbody>
+                  </table>
+                  {{ $categories->links() }}
             </div>
         </div>
     </div>

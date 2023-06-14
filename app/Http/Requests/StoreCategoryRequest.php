@@ -23,10 +23,11 @@ class StoreCategoryRequest extends FormRequest
      */
     public function rules(): array
     {
+
         return [
             "name" => ["string", "required"],
-            "banner" => ["nullable", "mimes: jpg, png, jpe"],
-            "icon" => ["nullable", "mimes: jpg, png, jpe"],
+            "banner" => ["required", "image", "mimes:png,jpg,jpeg,gif"],
+            "icon" => ["required", "image", "mimes:png,jpg,jpeg,gif"],
             "meta_title" => ["string", "required"],
             "meta_description" => ["string", "required"]
         ];

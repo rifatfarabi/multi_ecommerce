@@ -3,9 +3,6 @@
 
 @section('content')
 
-    <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <div class="card mt-5">
@@ -16,10 +13,13 @@
                     </div>
                     <div class="card-body">
 
+                        <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+
                             <div class="form-group row mb-3">
                                 <label for="name" class="col-md-3 col-form-label">Name</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="name" id="name" placeholder="{{('Name')}}">
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="{{ ('Name') }}">
                                 </div>
                             </div>
 
@@ -55,9 +55,9 @@
                                 </div>
 
                             </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </form>
 @endsection
