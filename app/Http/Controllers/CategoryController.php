@@ -45,15 +45,16 @@ class CategoryController extends Controller
     }
 
 
-    public function edit(Category $category)
+    public function edit(Request $request, $id)
     {
+        $category = Category::find($id);
         return view('category.edit', compact('category'));
     }
 
     public function update(UpdateCategoryRequest $request, Category $category)
     {
         $category->update([
-
+           
             "name"=> $request->name,
             "banner"=> $request->banner,
             "icon"=> $request->icon,
@@ -65,9 +66,9 @@ class CategoryController extends Controller
     }
 
 
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        $category->delete();
+        $category = Category::find($id);
         return redirect()->route('category.index')->with("success", "Category Deleted Successfully");
     }
 }
