@@ -2,7 +2,6 @@
 
 
 @section('content')
-      {{dd('errors')}}
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <div class="card mt-5">
@@ -12,14 +11,17 @@
                         </h3>
                     </div>
                     <div class="card-body">
-
+                        
                         <form action="{{ route('category.update', $category->id) }}" method="POST" enctype="multipart/form-data">
+
                             @csrf
+
                             @method('PUT')
+
                             <div class="form-group row mb-3">
                                 <label for="name" class="col-md-3 col-form-label">Name</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="name" id="name" value="{{ $category->name}}" placeholder="{{ ('Name') }}">
+                                    <input type="text" class="form-control" name="name" id="name" value="{{ $category->name }}" placeholder="{{ ('Name') }}">
                                 </div>
                             </div>
 
@@ -40,13 +42,13 @@
                             <div class="form-group row mb-3">
                                 <label for="meta_title" class="col-md-3 col-form-label">Meta Title</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="meta_title" id="meta_title" value="{{ $category->meta_title}}" placeholder="{{ ('Meta Title') }}">
+                                    <input type="text" class="form-control" name="meta_title" id="meta_title" value="{{ $category->meta_title }}" placeholder="{{ ('Meta Title') }}">
                                 </div>
                             </div>
                             <div class="form-group row mb-3">
                                 <label for="name" class="col-md-3 col-form-label">Meta Description</label>
                                 <div class="col-md-9">
-                                    <textarea class="form-control" name="meta_description" id="meta_description" value="{{ $category->meta_description}}" rows="3"></textarea>
+                                    <textarea class="form-control" name="meta_description" id="meta_description" value="{{ $category->meta_description }}" rows="3"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">

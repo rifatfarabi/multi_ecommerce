@@ -45,7 +45,7 @@ class CategoryController extends Controller
     }
 
 
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
         $category = Category::find($id);
         return view('category.edit', compact('category'));
@@ -54,7 +54,6 @@ class CategoryController extends Controller
     public function update(UpdateCategoryRequest $request, Category $category)
     {
         $category->update([
-           
             "name"=> $request->name,
             "banner"=> $request->banner,
             "icon"=> $request->icon,
@@ -69,6 +68,7 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::find($id);
+        $category->delete();
         return redirect()->route('category.index')->with("success", "Category Deleted Successfully");
     }
 }

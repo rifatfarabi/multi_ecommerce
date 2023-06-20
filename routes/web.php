@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
@@ -33,5 +34,6 @@ Auth::routes();
 Route::get('admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
 Route::post('admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard.admin');
 Route::resource('category', CategoryController::class);
+Route::resource('brand', BrandController::class);
 
 

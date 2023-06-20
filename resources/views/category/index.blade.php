@@ -34,12 +34,20 @@
                             <td>{{ $category->meta_title}}</td>
                             <td>{{ $category->meta_description}}</td>
                             <td>
-                                <a class="btn btn-primary btn-icon btn-circle btn-sm" href="{{ route('category.edit', $category->id)}}" title="{{ ('Edit') }}">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <a class="btn btn-danger btn-icon btn-circle btn-sm" href="{{ route('category.destroy', $category->id)}}" title="{{ ('Delete') }}">
-                                    <i class="fas fa-trash"></i>
-                                </a>
+                                <div class="d-flex">
+                                    <a class="btn btn-primary btn-icon btn-circle btn-sm mx-2" href="{{ route('category.edit', $category->id )}}" title="{{ ('Edit') }}">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <div>
+                                        <form action="{{ route('category.destroy', $category->id)}}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-icon btn-circle btn-sm">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                         </form>
+                                    </div>
+                                </div>
                             </td>
                           </tr>
                         @endforeach
