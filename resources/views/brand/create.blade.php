@@ -7,9 +7,7 @@
             <div class="col-lg-8 mx-auto">
                 <div class="card mt-5">
                     <div class="card-header">
-                        <h5 class="mb-0 h6">Brand Information
-                            {{-- <a href="{{ route('category.index') }}" class="btn btn-primary float-end">Back</a> --}}
-                        </h3>
+                        <h5 class="mb-0 h6">Brand Information</h5>
                     </div>
                     <div class="card-body">
 
@@ -24,16 +22,9 @@
                             </div>
 
                             <div class="form-group row mb-3">
-                                <label for="banner" class="col-md-3 col-form-label">Banner</label>
+                                <label for="logo" class="col-md-3 col-form-label">Logo</label>
                                 <div class="col-md-9">
-                                    <input type="file" class="form-control" name="banner" id="banner">
-                                </div>
-                            </div>
-
-                            <div class="form-group row mb-3">
-                                <label for="icon" class="col-md-3 col-form-label">Icon</label>
-                                <div class="col-md-9">
-                                    <input type="file" class="form-control" name="icon" id="icon" >
+                                    <input type="file" class="form-control" name="logo" id="logo">
                                 </div>
                             </div>
 

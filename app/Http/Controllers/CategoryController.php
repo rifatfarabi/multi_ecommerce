@@ -36,7 +36,7 @@ class CategoryController extends Controller
             "meta_description"=> $request->meta_description
         ]);
 
-        return redirect()->route('category.index')->with("success", "Category Created Successfully");
+        return redirect()->route('category.index')->with("message", "Category Created Successfully");
     }
 
     public function show(string $id)
@@ -61,7 +61,7 @@ class CategoryController extends Controller
             "meta_description"=> $request->meta_description
         ]);
 
-        return redirect()->route('category.index')->with("success", "Category Updated Successfully");
+        return redirect()->route('category.index')->with("message", "Category Updated Successfully");
     }
 
 
@@ -69,6 +69,6 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect()->route('category.index')->with("success", "Category Deleted Successfully");
+        return redirect()->route('category.index')->with("message", "Category Deleted Successfully");
     }
 }
