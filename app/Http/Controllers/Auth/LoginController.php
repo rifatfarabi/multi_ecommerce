@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Request;
 
 class LoginController extends Controller
@@ -47,6 +48,33 @@ class LoginController extends Controller
         }else{
             return redirect()->route('welcome');
         }
+    }
+
+    public function login(Request $request)
+    {
+        $this->validate($request,[
+            "email" => ["required","email"],
+            "password" => ["required"],
+        ]);
+
+        if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
+
+        }
+
+        // if(!auth()->attempt($request->only(['email','password']), $request->remember)) {
+        //     return back()->with("failed","invalid details");
+        // }
+
+        if (Auth::viaRemember()) {
+            //
+        }
+
+        return redirect()->route('dashboard');
+    }
+
+    protected function loggedOut(Request $request)
+    {
+        return redirect()->route('admin.login');
     }
 
 }

@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <form action="" method="POST">
+    <form action="#" method="POST">
 
         <div class="row gutters-10">
 
@@ -40,8 +40,8 @@
                                     {{ 'Customer' }}
                                 </div>
                                 {{-- <div class="h3 fw-700 mb-3">
-                            {{ \App\Models\User::where('user_type', 'customer')->where('email_verified_at', '!=', null)->count() }}
-                        </div> --}}
+                                 {{ \App\Models\User::where('user_type', 'customer')->where('email_verified_at', '!=', null)->count() }}
+                                </div> --}}
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                                 <path fill="rgba(255,255,255,0.3)" fill-opacity="1"
@@ -162,13 +162,13 @@
                     </div>
                 </div>
             {{-- @endforeach --}}
-            </div> --}}
+            </div>
         </div>
         </div>
 
 
 
-        {{-- <div>
+        <div>
             <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
@@ -180,7 +180,7 @@
             </form>
         </div>
 
-    </div> --}}
+        {{-- </div> --}}
     </form>
 @endsection
 
