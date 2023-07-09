@@ -27,14 +27,42 @@ class CategoryController extends Controller
 
     public function store(StoreCategoryRequest $request)
     {
-        $category = Category::create([
 
-            "name"=> $request->name,
-            "banner"=> $request->banner,
-            "icon"=> $request->icon,
-            "meta_title"=> $request->meta_title,
-            "meta_description"=> $request->meta_description
-        ]);
+        $category = new Category();
+        $category->name = $request->name;
+
+        if($request->hasFile('banner'))
+        {
+            $file = $request->file('banner');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->move('uploads/categories/', $filename);
+            $category->banner = $filename;
+
+        }
+        if($request->hasFile('icon'))
+        {
+            $file = $request->file('icon');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->move('uploads/banners/', $filename);
+            $category->icon = $filename;
+
+        }
+        $category->meta_title = $request->meta_title;
+        $category->meta_description = $request->meta_description;
+
+        $category->save();
+
+
+        // $category = Category::create([
+
+        //     "name"=> $request->name,
+        //     "banner"=> $request->banner,
+        //     "icon"=> $request->icon,
+        //     "meta_title"=> $request->meta_title,
+        //     "meta_description"=> $request->meta_description
+        // ]);
 
         return redirect()->route('category.index')->with("message", "Category Created Successfully");
     }
