@@ -29,8 +29,12 @@
                         <tr>
                             <th scope="row">{{ $key+1 }}</th>
                             <td>{{ $category->name}}</td>
-                            <td>{{ $category->banner}}</td>
-                            <td>{{ $category->icon}}</td>
+                            <td>
+                                <img  style="height: 40px;width: 38px;" src="{{ asset('uploads/categories/'.$category->banner) }}" alt="banner" class="img-size-50 mr-3 img-circle">
+                            </td>
+                            <td>
+                                <img  style="height: 40px;width: 38px;" src="{{ asset('uploads/banners/'.$category->icon) }}" alt="logo" class="img-size-50 mr-3 img-circle">
+                            </td>
                             <td>{{ $category->meta_title}}</td>
                             <td>{{ $category->meta_description}}</td>
                             <td>

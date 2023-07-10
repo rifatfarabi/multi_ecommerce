@@ -25,12 +25,28 @@ class BrandController extends Controller
 
     public function store(StoreBrandRequest $request)
     {
-        $brand = Brand::create([
-            "name"=> $request->name,
-            "logo"=> $request->logo,
-            "meta_title"=> $request->meta_title,
-            "meta_description"=> $request->meta_description
-        ]);
+        $brand = new Brand();
+        $brand->name = $request->name;
+
+        if($request->hasFile('logo'))
+        {
+            $file = $request->file('logo');
+            $extention = $file->getClientOriginalExtension();
+            $fileName = time().'.'.$extention;
+            $file->move('uploads/brands/', $fileName);
+            $brand->logo = $fileName;
+        }
+
+        $brand->meta_title = $request->meta_title;
+        $brand->meta_description = $request->meta_description;
+        $brand->save();
+
+        // $brand = Brand::create([
+        //     "name"=> $request->name,
+        //     "logo"=> $request->logo,
+        //     "meta_title"=> $request->meta_title,
+        //     "meta_description"=> $request->meta_description
+        // ]);
 
         return redirect()->route('brand.index')->with('message','Brand Created Successfully');
     }

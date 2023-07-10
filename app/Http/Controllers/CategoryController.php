@@ -38,8 +38,8 @@ class CategoryController extends Controller
             $filename = time().'.'.$extention;
             $file->move('uploads/categories/', $filename);
             $category->banner = $filename;
-
         }
+
         if($request->hasFile('icon'))
         {
             $file = $request->file('icon');
@@ -47,11 +47,10 @@ class CategoryController extends Controller
             $filename = time().'.'.$extention;
             $file->move('uploads/banners/', $filename);
             $category->icon = $filename;
-
         }
+
         $category->meta_title = $request->meta_title;
         $category->meta_description = $request->meta_description;
-
         $category->save();
 
 
