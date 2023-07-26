@@ -11,14 +11,14 @@ class Order extends Model
 
     protected $fillable =[
 
-    "Order Code",
-    "Num. of Products",
-    "Customer",
-    "Area",
-    "Amount",
-    "Delivery Status",
-    "Payment Status",
-    "Order Time",
-    "Refund"
+    "order_code",
+    "num_of_products",
+    "customer",
+    "area",
+    "amount",
+    "delivery_status",
+    "payment_status",
+    "order_time",
+    "refund"
     ];
 }
