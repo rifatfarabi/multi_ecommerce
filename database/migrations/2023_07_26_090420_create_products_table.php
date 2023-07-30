@@ -14,16 +14,16 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('category');
-            $table->string('brand');
+            $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->string('brand')->nullable();
             $table->string('unit');
             $table->string('minimum_purchase_qty');
-            $table->string('refundable');
+            $table->string('refundable')->nullable();
             $table->string('thumbnail_image');
             $table->string('unit_price');
             $table->string('discount');
             $table->string('quantity');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
