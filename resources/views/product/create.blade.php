@@ -57,13 +57,6 @@
                             </div>
 
                             <div class="form-group row mb-3">
-                                <label for="refundable" class="col-md-3 col-form-label">Refundable</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="refundable" id="refundable" placeholder="{{ ('Refundable') }}">
-                                </div>
-                            </div>
-
-                            <div class="form-group row mb-3">
                                 <label for="unit_price" class="col-md-3 col-form-label">Unit Price</label>
                                 <div class="col-md-9">
                                     <input type="text" class="form-control" name="unit_price" id="unit_price" placeholder="{{ ('Unit Price') }}">
@@ -95,6 +88,16 @@
                                     <textarea class="form-control" name="description" id="description" rows="3"></textarea>
                                 </div>
                             </div>
+                            <div class="form-group row mb-3">
+                                <label for="refundable" class="col-md-3 col-form-label">Refundable</label>
+                                <div class="col-md-9">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                                        {{-- <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label> --}}
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="form-group row">
                                 <div class="col">
                                     <button type="submit" class="btn btn-primary float-end">Save</button>
