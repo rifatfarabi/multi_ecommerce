@@ -56,6 +56,9 @@ class ProductController extends Controller
         $product->quantity = $request->quantity;
         $product->description = $request->description;
         $product->refundable = $request->refundable;
+        $product->save();
+
+        return redirect()->route('product.index')->with('message','Product Created Successfully');
 
 
     }

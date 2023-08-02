@@ -27,13 +27,10 @@
                         <tr>
                             <th scope="row">{{ $key+1 }}</th>
                             <td>{{ $product->name}}</td>
-                            <td>
+                            {{-- <td>
                                 <img  style="height: 40px;width: 38px;" src="{{ asset('uploads/categories/'.$product->banner) }}" alt="banner" class="img-size-50 mr-3 img-circle">
-                            </td>
-                            <td>
-                                <img  style="height: 40px;width: 38px;" src="{{ asset('uploads/banners/'.$product->icon) }}" alt="logo" class="img-size-50 mr-3 img-circle">
-                            </td>
-                            <td>{{ $product->meta_title}}</td>
+                            </td> --}}
+                            <td>{{ $product->auth()->user()}}</td>
                             <td>{{ $product->meta_description}}</td>
                             <td>
                                 <div class="d-flex">

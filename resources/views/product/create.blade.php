@@ -15,9 +15,9 @@
                             @csrf
 
                             <div class="form-group row mb-3">
-                                <label for="product_name" class="col-md-3 col-form-label">Product Name</label>
+                                <label for="name" class="col-md-3 col-form-label">Product Name</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="product_name" id="product_name" placeholder="{{ ('Product Name') }}">
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="{{ ('Product Name') }}">
                                 </div>
                             </div>
 
