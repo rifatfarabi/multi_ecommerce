@@ -55,6 +55,12 @@
                                     <input type="text" class="form-control" name="minimum_purchase_qty" id="minimum_purchase_qty" placeholder="{{ ('Minimum Purchase Qty') }}">
                                 </div>
                             </div>
+                            <div class="form-group row mb-3">
+                                <label for="maximum_purchase_qty" class="col-md-3 col-form-label">Miximum Purchase Qty</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="maximum_purchase_qty" id="maximum_purchase_qty" placeholder="{{ ('Miximum Purchase Qty') }}">
+                                </div>
+                            </div>
 
                             <div class="form-group row mb-3">
                                 <label for="unit_price" class="col-md-3 col-form-label">Unit Price</label>

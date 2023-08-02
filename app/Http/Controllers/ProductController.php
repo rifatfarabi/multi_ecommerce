@@ -9,6 +9,8 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+use function Symfony\Component\HttpKernel\HttpCache\save;
+
 class ProductController extends Controller
 {
     /**
@@ -55,10 +57,11 @@ class ProductController extends Controller
         $product->discount = $request->discount;
         $product->quantity = $request->quantity;
         $product->description = $request->description;
-        $product->refundable = $request->refundable;
+        $product->refundable = $request->refundable ? true : false;
         $product->save();
 
-        return redirect()->route('product.index')->with('message','Product Created Successfully');
+
+        return redirect()->route('product.index')->with("message","Product Created Successfully");
 
 
     }

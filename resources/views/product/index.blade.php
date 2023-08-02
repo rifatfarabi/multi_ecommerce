@@ -30,8 +30,8 @@
                             {{-- <td>
                                 <img  style="height: 40px;width: 38px;" src="{{ asset('uploads/categories/'.$product->banner) }}" alt="banner" class="img-size-50 mr-3 img-circle">
                             </td> --}}
-                            <td>{{ $product->auth()->user()}}</td>
-                            <td>{{ $product->meta_description}}</td>
+                            <td>{{ $product->unit }}</td>
+                            <td>{{ $product->quantity}}</td>
                             <td>
                                 <div class="d-flex">
                                     <a class="btn btn-primary btn-icon btn-circle btn-sm mx-2" href="{{ route('product.edit', $product->id )}}" title="{{ ('Edit') }}">

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('brand')->nullable();
             $table->string('unit');
             $table->string('minimum_purchase_qty');
+            $table->string('maximum_purchase_qty');
             $table->string('thumbnail_image');
             $table->string('unit_price');
             $table->string('discount')->nullable();

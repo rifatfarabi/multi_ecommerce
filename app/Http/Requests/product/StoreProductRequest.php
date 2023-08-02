@@ -29,9 +29,9 @@ class StoreProductRequest extends FormRequest
             "thumbnail_image" => ["image", "mimes:png,jpg,jpeg,gif"],
             "unit_price" => ["string"],
             "discount" => ["string"],
-            "name" => ["string", "required"],
-            "quantity" => ["string"],
-            "description" => ["string"]
+            "quantity" => ["string", "required"],
+            "description" => ["string"],
+            "refundable" => ["string"]
         ];
     }
 }
