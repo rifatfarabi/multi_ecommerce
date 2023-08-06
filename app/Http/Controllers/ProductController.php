@@ -79,15 +79,30 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $categories = Category::all();
+        $brands = Brand::all();
+        $product = Product::find($id);
+        return view('product.edit', compact('product','categories','brands'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProductRequest $request, string $id)
+    public function update(UpdateProductRequest $request,Product $product)
     {
-        //
+        $product->update([
+        "name" => $request->name,
+
+        "unit" => $request->unit,
+        "minimum_purchase_qty" => $request->minimum_purchase_qty,
+        "maximum_purchase_qty" => $request->maximum_purchase_qty,
+
+        "unit_price" => $request->unit_price,
+        "discount" => $request->discount,
+        "quantity" => $request->quantity,
+        "description" => $request->description,
+        "refundable" => $request->refundable ? true : false
+        ])
     }
 
     /**

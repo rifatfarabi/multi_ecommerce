@@ -48,6 +48,13 @@
                                 <div class="col-md-9">
                                     <input type="text" class="form-control" name="unit" id="unit" placeholder="{{ ('Unit') }}">
                                 </div>
+                                {{-- <div class="col-md-2">
+                                    <select class="form-select form-select-sm" name="brand_id" id="brand_id" aria-label=".form-select-sm example">
+                                        @foreach ($brands as $brand)
+                                           <option value="{{ $brand->id}}">{{ $brand->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div> --}}
                             </div>
                             <div class="form-group row mb-3">
                                 <label for="minimum_purchase_qty" class="col-md-3 col-form-label">Minimum Purchase Qty</label>

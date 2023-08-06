@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->string('brand')->nullable();
+            $table->string('brand_id')->nullable();
             $table->string('unit');
             $table->string('minimum_purchase_qty');
             $table->string('maximum_purchase_qty');
