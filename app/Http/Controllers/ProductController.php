@@ -102,7 +102,9 @@ class ProductController extends Controller
         "quantity" => $request->quantity,
         "description" => $request->description,
         "refundable" => $request->refundable ? true : false
-        ])
+        ]);
+
+        return redirect()->route('product.index')->with("message", "Product Updated Successfully");
     }
 
     /**
@@ -110,6 +112,8 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $product =Product::find($id);
+        $product->delete();
+        return redirect()->route('product.index')->with("message", "Product Deleted Successfully");
     }
 }

@@ -30,7 +30,7 @@
                             {{-- <td>
                                 <img  style="height: 40px;width: 38px;" src="{{ asset('uploads/categories/'.$product->banner) }}" alt="banner" class="img-size-50 mr-3 img-circle">
                             </td> --}}
-                            <td>{{ $product->unit }}</td>
+                            <td>{{ $product->user->name ?? 'None'}}</td>
                             <td>{{ $product->quantity}}</td>
                             <td>
                                 <div class="d-flex">
