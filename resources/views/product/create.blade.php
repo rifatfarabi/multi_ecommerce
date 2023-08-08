@@ -20,6 +20,12 @@
                                     <input type="text" class="form-control" name="name" id="name" placeholder="{{ ('Product Name') }}">
                                 </div>
                             </div>
+                            {{-- <div class="form-group row mb-3">
+                                <label for="user_id" class="col-md-3 col-form-label">User Id</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="user_id" id="user_id" placeholder="{{ ('Product user id') }}">
+                                </div>
+                            </div> --}}
 
                             <div class="form-group row mb-3">
                                 <label for="category_id" class="col-md-3 col-form-label">Category</label>

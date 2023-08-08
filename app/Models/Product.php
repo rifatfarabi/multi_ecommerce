@@ -11,6 +11,7 @@ class Product extends Model
 
     protected $fillable = [
         'name',
+        'user_id',
         'category_id',
         'brand_id',
         'unit',
@@ -22,6 +23,7 @@ class Product extends Model
         'discount ',
         'quantity ',
         'description',
+        'refundable'
     ];
 
     public function user(){

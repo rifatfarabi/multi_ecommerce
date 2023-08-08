@@ -8,18 +8,23 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use function Symfony\Component\HttpKernel\HttpCache\save;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $products = Product::paginate(10);
-        return view('product.index',compact('products'));
+        return view('product.index', compact('products'));
     }
 
     /**
@@ -29,7 +34,7 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $brands = Brand::all();
-        return view('product.create',compact('categories','brands'));
+        return view('product.create', compact('categories', 'brands'));
     }
 
     /**
@@ -39,16 +44,16 @@ class ProductController extends Controller
     {
         $product = new Product();
         $product->name = $request->name;
+        $product->user_id = Auth::user()->id;
 
         $product->unit = $request->unit;
         $product->minimum_purchase_qty = $request->minimum_purchase_qty;
         $product->maximum_purchase_qty = $request->maximum_purchase_qty;
 
-        if($request->hasFile('thumbnail_image'))
-        {
+        if ($request->hasFile('thumbnail_image')) {
             $file = $request->file('thumbnail_image');
             $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
+            $filename = time() . '.' . $extention;
             $file->move('uploads/products/', $filename);
             $product->thumbnail_image = $filename;
         }
@@ -61,9 +66,7 @@ class ProductController extends Controller
         $product->save();
 
 
-        return redirect()->route('product.index')->with("message","Product Created Successfully");
-
-
+        return redirect()->route('product.index')->with("message", "Product Created Successfully");
     }
 
     /**
@@ -82,26 +85,27 @@ class ProductController extends Controller
         $categories = Category::all();
         $brands = Brand::all();
         $product = Product::find($id);
-        return view('product.edit', compact('product','categories','brands'));
+        return view('product.edit', compact('product', 'categories', 'brands'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProductRequest $request,Product $product)
+    public function update(UpdateProductRequest $request, Product $product)
     {
         $product->update([
-        "name" => $request->name,
+            "name" => $request->name,
+            $product->user_id = $request->user_id,
 
-        "unit" => $request->unit,
-        "minimum_purchase_qty" => $request->minimum_purchase_qty,
-        "maximum_purchase_qty" => $request->maximum_purchase_qty,
+            "unit" => $request->unit,
+            "minimum_purchase_qty" => $request->minimum_purchase_qty,
+            "maximum_purchase_qty" => $request->maximum_purchase_qty,
 
-        "unit_price" => $request->unit_price,
-        "discount" => $request->discount,
-        "quantity" => $request->quantity,
-        "description" => $request->description,
-        "refundable" => $request->refundable ? true : false
+            "unit_price" => $request->unit_price,
+            "discount" => $request->discount,
+            "quantity" => $request->quantity,
+            "description" => $request->description,
+            "refundable" => $request->refundable ? true : false,
         ]);
 
         return redirect()->route('product.index')->with("message", "Product Updated Successfully");
@@ -112,7 +116,7 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        $product =Product::find($id);
+        $product = Product::find($id);
         $product->delete();
         return redirect()->route('product.index')->with("message", "Product Deleted Successfully");
     }

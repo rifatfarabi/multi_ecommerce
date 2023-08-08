@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Route as SymfonyRoute;
 
@@ -35,6 +36,7 @@ Auth::routes();
 
 Route::get('admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
 Route::post('admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard.admin');
+
 Route::resource('category', CategoryController::class);
 Route::resource('brand', BrandController::class);
 Route::resource('product', ProductController::class);
