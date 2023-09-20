@@ -15,12 +15,14 @@ class UserTableSeeder extends Seeder
     {
         $users = [
             [
+                "id" => "1",
                 "name" => "Admin",
                 "email" => "admin@gmail.com",
                 "password" => \Hash::make("password"),
                 "role"=> "admin"
             ],
             [
+                "id" => "2",
                 "name" => "Customer",
                 "email" => "customer@gmail.com",
                 "password" => \Hash::make("password"),

@@ -43,38 +43,40 @@ class LoginController extends Controller
     public function authenticated(){
         if(auth()->user()->role == "admin"){
             return redirect()->route("dasboard.admin");
+
         }elseif(auth()->user()->role == "customer"){
             return redirect()->route('dashboard.customer');
+
         }else{
             return redirect()->route('welcome');
         }
     }
 
-    public function login(Request $request)
-    {
-        $this->validate($request,[
-            "email" => ["required","email"],
-            "password" => ["required"],
-        ]);
+    // public function login(Request $request)
+    // {
+    //     $this->validate($request,[
+    //         "email" => ["required","email"],
+    //         "password" => ["required"],
+    //     ]);
 
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+    //     if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
 
-        }
+    //     }
 
-        // if(!auth()->attempt($request->only(['email','password']), $request->remember)) {
-        //     return back()->with("failed","invalid details");
-        // }
+    //     if(!auth()->attempt($request->only(['email','password']), $request->remember)) {
+    //         return back()->with("failed","invalid details");
+    //     }
 
-        if (Auth::viaRemember()) {
-            //
-        }
+    //     if (Auth::viaRemember()) {
+    //         //
+    //     }
 
-        return redirect()->route('dashboard');
-    }
+    //     return redirect()->route('dashboard');
+    // }
 
-    protected function loggedOut(Request $request)
-    {
-        return redirect()->route('admin.login');
-    }
+    // protected function loggedOut(Request $request)
+    // {
+    //     return redirect()->route('admin.login');
+    // }
 
 }

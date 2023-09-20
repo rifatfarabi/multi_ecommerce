@@ -37,11 +37,13 @@
                                     <td>{{ $brand->meta_description }}</td>
                                     <td>
                                         <div class="d-flex">
-                                            <a class="btn btn-primary btn-icon btn-circle btn-sm mx-2"
+                                            <div>
+                                                <a class="btn btn-primary btn-icon btn-circle btn-sm mx-2"
                                                 href="{{ route('brand.edit', $brand->id) }}" title="{{ 'Edit' }}">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <div>
+                                            </div>
+                                            <div class="">
                                                 <form action="{{ route('brand.destroy', $brand->id) }}" method="POST"
                                                     enctype="multipart/form-data">
                                                     @csrf
